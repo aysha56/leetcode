@@ -6,9 +6,8 @@
 var numWaterBottles = function(numBottles, numExchange) {
     var numBottlesDrank = numBottles
     while(numBottles >= numExchange){
-        var newBottles = Math.floor(numBottles/numExchange)
-        numBottlesDrank += newBottles
-        numBottles =  newBottles + numBottles % numExchange
+        numBottlesDrank += Math.floor(numBottles/numExchange)
+        numBottles =  Math.floor(numBottles/numExchange) + numBottles % numExchange
     }
     return numBottlesDrank
 };
